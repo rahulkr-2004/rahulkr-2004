@@ -40,6 +40,43 @@
 </div>
 
 <br/>
+
+<div align="center">
+  <details>
+    <summary><b>🔥 Click to Access: Classified Operations & Projects 🔥</b></summary>
+    <br/>
+    <p align="left">
+      <code>[user@root]~$ ./execute_scan.sh</code><br/>
+      > 🔓 <b>Built Web App Vulnerability Scanner:</b> Python tool to detect XSS and SQLi payloads.<br/>
+      > ☕ <b>Secure Banking API:</b> Created robust Java Spring Boot backend featuring OAuth2.<br/>
+      > 🛡️ <b>TryHackMe / CTFs:</b> Actively engaging in penetration testing attack-defend scenarios.
+    </p>
+  </details>
+
+  <details>
+    <summary><b>📜 Click to Access: Verified Credentials 📜</b></summary>
+    <br/>
+    <p align="left">
+      <code>[user@root]~$ cat certifications.txt</code><br/>
+      > 🎓 <b>Advanced Java Development:</b> Implemented secure coding patterns.<br/>
+      > 🎓 <b>Cyber Security Fundamentals:</b> Network analysis and incident response.
+    </p>
+  </details>
+</div>
+
+<br/>
+<hr/>
+<br/>
+
+<h2 align="center">💡 Dynamic Protocol</h2>
+
+<div align="center">
+  <a href="https://github.com/rahulkr-2004">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=2000&color=00FF41&center=true&vCenter=true&width=600&lines=%22Security+is+a+process,+not+a+product.%22+-+Bruce+Schneier;%22Code+is+read+much+more+often+than+it+is+written.%22;%22Given+enough+eyeballs,+all+bugs+are+shallow.%22" alt="Dynamic Quote" />
+  </a>
+</div>
+
+<br/>
 <hr/>
 <br/>
 
