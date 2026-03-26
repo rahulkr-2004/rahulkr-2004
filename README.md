@@ -43,26 +43,13 @@
 <hr/>
 <br/>
 
-<h2 align="center">🏆 GitHub Execution Trophies</h2>
 
-<div align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=rahulkr-2004&theme=tokyonight&margin-w=15&row=1&column=6" alt="rahulkr-2004" />
-  </a>
-</div>
 
-<br/>
-<hr/>
-<br/>
-
-<h2 align="center">📊 GitHub Analytics</h2>
+<h2 align="center">📊 GitHub Analytics Dashboard</h2>
 
 <div align="center">
   <a href="https://github.com/rahulkr-2004">
-    <img height="180" src="https://github-readme-stats.vercel.app/api?username=rahulkr-2004&show_icons=true&theme=tokyonight&icon_color=00FF41&border_color=00FF41&title_color=00FF41" alt="GitHub Stats" />
-  </a>
-  <a href="https://github.com/rahulkr-2004">
-    <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulkr-2004&layout=compact&theme=tokyonight&border_color=00FF41&title_color=00FF41" alt="Top Languages" />
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=rahulkr-2004&theme=tokyonight" alt="GitHub Profile Details" />
   </a>
 </div>
 
