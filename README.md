@@ -98,16 +98,6 @@
 <hr/>
 <br/>
 
-<h2 align="center">🎧 Currently Listening To</h2>
-
-<div align="center">
-  <!-- spotify start -->
-  <!-- spotify end -->
-</div>
-
-<br/>
-<hr/>
-<br/>
 
 <h2 align="center">🐍 GitHub Contribution Snake</h2>
 
