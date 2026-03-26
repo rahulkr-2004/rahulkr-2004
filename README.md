@@ -1,11 +1,13 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1b26,100:00FF41&height=250&section=header&text=System%20Breach%20Initiated...&fontSize=40&fontColor=00FF41&animation=fadeIn&fontAlignY=35&desc=Target:%20rahulkr-2004&descSize=20&descAlignY=55" width="100%"/>
+  <a href="https://github.com/rahulkr-2004">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1b26,100:00FF41&height=250&section=header&text=System%20Breach%20Initiated...&fontSize=40&fontColor=00FF41&animation=fadeIn&fontAlignY=35&desc=Target:%20rahulkr-2004&descSize=20&descAlignY=55" width="100%"/>
+  </a>
 </div>
 
 <br/>
 
 <div align="center">
-  <a href="https://git.io/typing-svg">
+  <a href="https://github.com/rahulkr-2004">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1000&color=00FF41&center=true&vCenter=true&width=600&lines=I'm+a+Cyber+Security+Enthusiast;I'm+a+Java+Developer;Building+Secure+Systems;Analyzing+%26+Defending" alt="Typing SVG" />
   </a>
 </div>
@@ -13,7 +15,9 @@
 <br/>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=rahulkr-2004&label=TERMINAL+ACCESS+COUNT&color=00FF41&style=for-the-badge" alt="Profile Views" />
+  <a href="https://github.com/rahulkr-2004">
+    <img src="https://komarev.com/ghpvc/?username=rahulkr-2004&label=TERMINAL+ACCESS+COUNT&color=00FF41&style=for-the-badge" alt="Profile Views" />
+  </a>
 </div>
 
 <br/>
