@@ -7,7 +7,7 @@
 
 <!-- NAME / TAGLINE - animated typing -->
 <a href="https://github.com/rahulkr-2004">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Cyber+Security+Enthusiast;Java+%26+Full-Stack+Developer;01100011+01101111+01100100+01100101" alt="typing banner">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Java+Developer;Cyber+Security+Enthusiast;01100011+01101111+01100100+01100101" alt="typing banner">
 </a>
 
 <br>
@@ -120,10 +120,6 @@ and I solve problems for fun when neither of those is cooperating.
 <br>
 
 <img src="assets/metrics.languages.svg" height="165" alt="most used languages">
-
-<br><br>
-
-<img src="assets/metrics.achievements.svg" width="90%" alt="achievements">
 
 <br><br>
 
