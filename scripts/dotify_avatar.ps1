@@ -1,97 +1,109 @@
 Add-Type -AssemblyName System.Drawing
 
 $imgPath = "c:\Users\rahul\OneDrive\Desktop\github\assets\avatar.png"
-$bmp = [System.Drawing.Bitmap]::FromFile($imgPath)
-$cols = 72
-$rows = 72
-$cell = 8
-$pad = 12
+if (-not (Test-Path $imgPath)) {
+    Write-Error "avatar.png not found!"
+    exit 1
+}
 
-# Rescale image to 72x72
+$bmp = [System.Drawing.Bitmap]::FromFile($imgPath)
+$cols = 100
+$origW = $bmp.Width
+$origH = $bmp.Height
+
+# Calculate square crop centered on face
+$side = [Math]::Min($origW, $origH)
+$cropX = [Math]::Max(0, [int](($origW - $side) / 2))
+$cropY = [Math]::Max(0, [int](($origH - $side) / 2))
+
+$cropRect = New-Object System.Drawing.Rectangle($cropX, $cropY, $side, $side)
+$cropped = $bmp.Clone($cropRect, $bmp.PixelFormat)
+$bmp.Dispose()
+
+# Rows proportional (1:1 square)
+$rows = 100
+$cell = 6.0
+$pad = 10.0
+
 $resized = New-Object System.Drawing.Bitmap($cols, $rows)
 $g = [System.Drawing.Graphics]::FromImage($resized)
 $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
-$g.DrawImage($bmp, 0, 0, $cols, $rows)
+$g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+$g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+$g.DrawImage($cropped, 0, 0, $cols, $rows)
 $g.Dispose()
-$bmp.Dispose()
+$cropped.Dispose()
 
 $w = $cols * $cell
 $h = $rows * $cell
 $totalW = $w + 2 * $pad
 $totalH = $h + 2 * $pad
 
-$svgHeader = @"
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 $totalW $totalH" width="$totalW" height="$totalH" role="img" aria-label="Rahul Kumar, rendered as a dot matrix">
-  <style>
-    @keyframes dp { 0%, 100% { opacity: .45 } 50% { opacity: 1 } }
-    .d { animation: dp 2.8s ease-in-out infinite }
-    .l0 { animation-delay: 0.00s }
-    .l1 { animation-delay: 0.28s }
-    .l2 { animation-delay: 0.56s }
-    .l3 { animation-delay: 0.84s }
-    .l4 { animation-delay: 1.12s }
-    .l5 { animation-delay: 1.40s }
-    .l6 { animation-delay: 1.68s }
-    .l7 { animation-delay: 1.96s }
-    .l8 { animation-delay: 2.24s }
-    .l9 { animation-delay: 2.52s }
-  </style>
-  <rect width="100%" height="100%" fill="none"/>
-  <g transform="translate($pad,$pad)">
-"@
+$lanes = 10
+$duration = 2.8
+
+$cssBuilder = New-Object System.Text.StringBuilder
+$null = $cssBuilder.Append("<style>")
+$null = $cssBuilder.Append("@keyframes dp{0%,100%{opacity:.45}50%{opacity:1}}")
+$null = $cssBuilder.Append(".d{animation:dp " + $duration + "s ease-in-out infinite}")
+for ($i = 0; $i -lt $lanes; $i++) {
+    $delay = ($i / $lanes * $duration).ToString("F2", [System.Globalization.CultureInfo]::InvariantCulture)
+    $null = $cssBuilder.Append(".l$i{animation-delay:" + $delay + "s}")
+}
+$null = $cssBuilder.Append("</style>")
+
+$svgHeader = [string]::Format(
+    [System.Globalization.CultureInfo]::InvariantCulture,
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {0:F0} {1:F0}" width="{0:F0}" height="{1:F0}" role="img" aria-label="Rahul Kumar, rendered as a dot matrix">{2}<rect width="100%" height="100%" fill="none"/><g transform="translate({3:F0},{3:F0}">',
+    $totalW, $totalH, $cssBuilder.ToString(), $pad
+)
 
 $sb = New-Object System.Text.StringBuilder
 $null = $sb.Append($svgHeader)
 
-$max_r = $cell * 0.5 * 0.95
-$centerCol = $cols / 2
-$centerRow = $rows / 2
-$maxDist = $cols / 2
+$max_r = $cell * 0.5 * 0.94
+$centerCol = $cols / 2.0
+$centerRow = $rows / 2.0
+$maxRadius = $cols / 2.0
 
 for ($y = 0; $y -lt $rows; $y++) {
     for ($x = 0; $x -lt $cols; $x++) {
-        $pixel = $resized.GetPixel($x, $y)
+        $p = $resized.GetPixel($x, $y)
         
-        # Circular vignette / cutout
-        $dx = $x - $centerCol
-        $dy = $y - $centerRow
+        # Soft circular vignette to fade smoothly at edges
+        $dx = $x - $centerCol + 0.5
+        $dy = $y - $centerRow + 0.5
         $dist = [Math]::Sqrt($dx * $dx + $dy * $dy)
-        if ($dist -gt ($maxDist - 1)) {
-            continue
+        
+        $feather = 3.0
+        $falloff = 1.0
+        if ($dist -gt ($maxRadius - $feather)) {
+            $falloff = ($maxRadius - $dist) / $feather
+            if ($falloff -le 0.0) { continue }
         }
         
-        # Perceived luminance: standard rec601
-        $lum = (0.299 * $pixel.R + 0.587 * $pixel.G + 0.114 * $pixel.B) / 255.0
+        # Standard perceptual luminance
+        $lum = (0.299 * $p.R + 0.587 * $p.G + 0.114 * $p.B) / 255.0
         
-        # Invert or enhance contrast so face details emerge
-        # In hacker dark theme, brighter pixels get larger dots
-        $v = [Math]::Pow($lum, 0.9)
-        if ($v -lt 0.08) {
-            continue
-        }
+        # Apply gentle gamma curve & falloff
+        $v = [Math]::Pow($lum, 0.95) * $falloff
+        if ($v -lt 0.04) { continue }
         
-        $r = $max_r * [Math]::Pow($v, 0.8)
-        if ($r -lt 0.4) {
-            continue
-        }
+        $r = $max_r * [Math]::Pow($v, 0.85)
+        if ($r -lt 0.20) { continue }
         
         $cx = $x * $cell + $cell / 2.0
         $cy = $y * $cell + $cell / 2.0
         
-        # GitHub Green matrix tones based on luminance
-        $fill = "#39d353"
-        if ($v -lt 0.35) {
-            $fill = "#0e4429"
-        } elseif ($v -lt 0.60) {
-            $fill = "#006d32"
-        } elseif ($v -lt 0.85) {
-            $fill = "#26a641"
-        } else {
-            $fill = "#39d353"
-        }
+        # Full true natural RGB color from the source photo!
+        $hexColor = [string]::Format("#{0:X2}{1:X2}{2:X2}", $p.R, $p.G, $p.B)
         
-        $lane = $x % 10
-        $line = [string]::Format([System.Globalization.CultureInfo]::InvariantCulture, '<circle cx="{0:F1}" cy="{1:F1}" r="{2:F2}" fill="{3}" class="d l{4}"/>', $cx, $cy, $r, $fill, $lane)
+        $lane = $x % $lanes
+        $line = [string]::Format(
+            [System.Globalization.CultureInfo]::InvariantCulture,
+            '<circle cx="{0:F1}" cy="{1:F1}" r="{2:F2}" fill="{3}" class="d l{4}"/>',
+            $cx, $cy, $r, $hexColor, $lane
+        )
         $null = $sb.Append($line)
     }
 }
@@ -99,5 +111,6 @@ for ($y = 0; $y -lt $rows; $y++) {
 $resized.Dispose()
 $null = $sb.Append("`n  </g>`n</svg>")
 
-[System.IO.File]::WriteAllText("c:\Users\rahul\OneDrive\Desktop\github\assets\portrait.svg", $sb.ToString(), [System.Text.Encoding]::UTF8)
-Write-Host "Successfully generated assets/portrait.svg from Rahul's avatar!"
+$outPath = "c:\Users\rahul\OneDrive\Desktop\github\assets\portrait.svg"
+[System.IO.File]::WriteAllText($outPath, $sb.ToString(), [System.Text.Encoding]::UTF8)
+Write-Host "Generated color dot-matrix portrait successfully at $outPath!"
