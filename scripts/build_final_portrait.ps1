@@ -49,7 +49,7 @@ $null = $css.Append("</style>")
 $sb = New-Object System.Text.StringBuilder
 $header = [string]::Format(
     [System.Globalization.CultureInfo]::InvariantCulture,
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {0:F1} {1:F1}" width="{0:F1}" height="{1:F1}" role="img" aria-label="Rahul Kumar, rendered as a dot matrix">{2}<rect width="100%" height="100%" fill="none"/><g transform="translate({3:F1},{3:F1}">',
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {0:F1} {1:F1}" width="{0:F1}" height="{1:F1}" role="img" aria-label="Rahul Kumar, rendered as a dot matrix">{2}<g transform="translate({3:F1},{3:F1})">',
     $totalW, $totalH, $css.ToString(), $pad
 )
 $null = $sb.Append($header)
@@ -65,14 +65,13 @@ for ($y = 0; $y -lt $rows; $y++) {
         $lum = (0.299 * $p.R + 0.587 * $p.G + 0.114 * $p.B) / 255.0
         
         # Skip pure pitch black background
-        if ($lum -lt $floor -and $p.R -lt 18 -and $p.G -lt 18 -and $p.B -lt 18) {
+        if ($lum -lt $floor -or ($p.R -lt 15 -and $p.G -lt 15 -and $p.B -lt 15)) {
             continue
         }
         
-        # Power curve for dot sizing
-        $v = [Math]::Pow($lum, 0.85)
-        $r = $max_r * (0.20 + 0.80 * $v)
-        if ($r -lt 0.35) { continue }
+        # Power curve matching dotify.py: r = max_r * (v ** 0.85)
+        $r = $max_r * [Math]::Pow($lum, 0.85)
+        if ($r -lt 0.20) { continue }
         
         $cx = $x * $cell + $cell / 2.0
         $cy = $y * $cell + $cell / 2.0
@@ -93,8 +92,9 @@ for ($y = 0; $y -lt $rows; $y++) {
 }
 
 $small.Dispose()
-$null = $sb.Append("`n  </g>`n</svg>")
+$null = $sb.Append("</g></svg>")
 
 $outPath = "c:\Users\rahul\OneDrive\Desktop\github\assets\portrait.svg"
-[System.IO.File]::WriteAllText($outPath, $sb.ToString(), [System.Text.Encoding]::UTF8)
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($outPath, $sb.ToString(), $utf8NoBom)
 Write-Host "Success! Created $outPath with row-by-row cascade transition animation!"
