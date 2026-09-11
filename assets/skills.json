@@ -1,0 +1,13 @@
+{
+  "title": "Skill Radar",
+  "_comment": "Self-rated values 0-100; radar.py generates radar-dark.svg and radar-light.svg from this.",
+  "axes": [
+    { "label": "Java",           "value": 90 },
+    { "label": "Cyber Security", "value": 85 },
+    { "label": "Spring Boot",    "value": 82 },
+    { "label": "SQL & Databases","value": 80 },
+    { "label": "DSA",            "value": 85 },
+    { "label": "JavaScript/Web", "value": 78 },
+    { "label": "Linux & Tools",  "value": 82 }
+  ]
+}

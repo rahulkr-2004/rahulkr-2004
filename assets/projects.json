@@ -1,0 +1,13 @@
+{
+  "_comment": "Featured repos, in README order. Star/fork/language come live from the API on every run; the description here overrides the repo's GitHub description.",
+  "projects": [
+    {
+      "repo": "AquaTrack---Water-Management-System",
+      "description": "Smart water utility platform for tracking real-time consumption, analytics, automated billing reports, and critical threshold alerts."
+    },
+    {
+      "repo": "Snipify",
+      "description": "Developer productivity platform for organizing, tagging, managing, and retrieving code snippets efficiently across projects."
+    }
+  ]
+}

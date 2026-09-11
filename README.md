@@ -1,36 +1,25 @@
 <div align="center">
 
-<!-- CAPSULE HEADER BANNER -->
+<!-- PORTRAIT - dot-matrix SVG portrait -->
+<img src="assets/portrait.svg" width="300" alt="Rahul Kumar, rendered as a dot matrix">
+
+<br>
+
+<!-- NAME / TAGLINE - animated typing -->
 <a href="https://github.com/rahulkr-2004">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00FF41&height=220&section=header&text=SYSTEM%20BREACH%20INITIATED...&fontSize=38&fontColor=00FF41&animation=fadeIn&fontAlignY=38&desc=Target:%20rahulkr-2004%20//%20Security%20%26%20Software%20Engineer&descSize=18&descAlignY=62" width="100%"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Cyber+Security+Enthusiast;Java+%26+Full-Stack+Developer;01100011+01101111+01100100+01100101" alt="typing banner">
 </a>
 
-<br/>
+<br>
 
-<!-- ANIMATED TYPING BANNER -->
-<a href="https://github.com/rahulkr-2004">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=1000&color=00FF41&center=true&vCenter=true&width=620&lines=Rahul+Kumar;Cyber+Security+Enthusiast;Java+%26+Full-Stack+Developer;Building+Secure+Systems;Analyzing+%26+Defending" alt="Typing SVG" />
-</a>
+<!-- SOCIALS -->
+<a href="https://www.linkedin.com/in/rahulkr2004/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:rahulamp2003@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+<a href="https://rahulkr-2004.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio"></a>
+<a href="https://codolio.com/profile/C6HHryCX"><img src="https://img.shields.io/badge/Codolio-F57C06?style=for-the-badge&logoColor=white" alt="Codolio"></a>
+<a href="https://leetcode.com/u/rahulkr_2004/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"></a>
 
-<br/>
-
-<!-- SOCIAL BADGES -->
-<a href="https://www.linkedin.com/in/rahulkr2004/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-<a href="mailto:rahulamp2003@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-</a>
-<a href="https://rahulkr-2004.netlify.app/">
-  <img src="https://img.shields.io/badge/Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio">
-</a>
-<a href="https://leetcode.com/u/rahulkr_2004/">
-  <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode">
-</a>
-
-<br/><br/>
-
-<img src="https://komarev.com/ghpvc/?username=rahulkr-2004&label=TERMINAL+ACCESS+COUNT&color=00FF41&style=for-the-badge" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=rahulkr-2004&style=flat&color=39d353&label=profile+views" alt="profile views">
 
 </div>
 
@@ -42,145 +31,154 @@
 $ cat about.txt
 ```
 
-Hi, I'm **Rahul Kumar**. I specialize in **Cyber Security**, **Java backend architecture**, and building secure, resilient full-stack applications. When I'm not auditing code for vulnerabilities, I'm solving complex problems in RDBMS and DSA.
+Hi, I'm **Rahul Kumar**. I build things that sit at the intersection of **cyber security** and **Java backend architecture**,
+and I solve problems for fun when neither of those is cooperating.
 
-- 🛡️ Focus: Cyber Security, Penetration Testing, Secure Systems & Java Backend Development
-- 🔭 Currently building: **[AquaTrack](https://github.com/rahulkr-2004/AquaTrack---Water-Management-System)** · **[Snipify](https://github.com/rahulkr-2004/Snipify)**
-- 🌐 Portfolio: **[rahulkr-2004.netlify.app](https://rahulkr-2004.netlify.app/)**
-- 🎓 Completed: **Wipro Database Solutions Expert Program** (SQL, PL/SQL, Oracle DBA)
-- ⚡ Motto: *"Security isn't an afterthought; it's the foundation."*
+- Currently building **[AquaTrack](https://github.com/rahulkr-2004/AquaTrack---Water-Management-System)** and **[Snipify](https://github.com/rahulkr-2004/Snipify)**
+- Portfolio: **[rahulkr-2004.netlify.app](https://rahulkr-2004.netlify.app/)**
+- Codolio: **[Rahul Kumar @ Codolio](https://codolio.com/profile/C6HHryCX)**
+- LeetCode: **[rahulkr_2004](https://leetcode.com/u/rahulkr_2004/)**
+- Learning **Advanced Penetration Testing + Spring Cloud Microservices**
+- Fun fact: **"Security isn't an afterthought; it's the foundation."**
 
----
-
-## `~/` tech-stack
-
-```console
-$ ls -la arsenal/
-```
-
-**Programming & Core**
-
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-**Backend & Databases**
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
-![Oracle RDBMS](https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-
-**Cyber Security & Systems**
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C93?style=flat-square&logo=kalilinux&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-167DAA?style=flat-square&logo=wireshark&logoColor=white)
-![Metasploit](https://img.shields.io/badge/Metasploit-124973?style=flat-square&logo=metasploit&logoColor=white)
-![Nmap](https://img.shields.io/badge/Nmap-000000?style=flat-square&logo=nmap&logoColor=white)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6600?style=flat-square&logo=burpsuite&logoColor=white)
-
-**Tools & Platforms**
-
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
-
----
-
-## `~/` featured-projects
-
-```console
-$ cat projects/featured.json
-```
-
-| Project | Description | Stack | Live Demo |
-|---------|-------------|-------|-----------|
-| 🌊 **[AquaTrack](https://github.com/rahulkr-2004/AquaTrack---Water-Management-System)** | Smart water utility app for tracking usage, billing reports & alerts | Java, Spring Boot, React | [smart-aquatrack.vercel.app](https://smart-aquatrack.vercel.app) |
-| ✂️ **[Snipify](https://github.com/rahulkr-2004/Snipify)** | Code snippet & management platform for developers | JS, HTML/CSS | [snipifyurcode.netlify.app](https://snipifyurcode.netlify.app/) |
-
----
-
-## `~/` github-stats
-
-```console
-$ gh api /users/rahulkr-2004/stats
-```
+<br>
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=rahulkr-2004&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=00FF41&text_color=c9d1d9&ring_color=00FF41&count_private=true" alt="Rahul's GitHub Stats"/>
-&nbsp;
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulkr-2004&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=c9d1d9&langs_count=8" alt="Top Languages"/>
+## `~/` toolbox
 
-<br/><br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=rahulkr-2004&theme=github-dark-blue&hide_border=true&background=0d1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&stroke=00FF41&sideLabels=c9d1d9&dates=c9d1d9&sideNums=00FF41&currStreakNum=ffffff" alt="GitHub Streak"/>
+<img src="https://skillicons.dev/icons?i=java,spring,mysql,postgres,js,html,css,git,github,linux,kali,vscode&perline=12" alt="tech stack">
 
 </div>
 
 ---
 
-## `~/` competitive-programming & dsa
-
-```console
-$ grep -r "rahulkr_2004" problem-solving/
-```
-
 <div align="center">
 
-[![LeetCode Stats](https://leetcard.jacoblin.cool/rahulkr_2004?theme=dark&font=Fira%20Code&ext=heatmap&border=0&bg=0d1117)](https://leetcode.com/u/rahulkr_2004/)
+## `~/` skill radar
+
+<table>
+<tr>
+<td width="50%" align="center" valign="middle">
+
+<!-- Self-rated radar - edit assets/skills.json, the workflow redraws it -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/radar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
+  <img src="assets/radar-dark.svg" width="400" alt="skill radar chart">
+</picture>
+
+</td>
+<td width="50%" align="center" valign="middle">
+
+<!-- Live radar built from real language byte counts across your repos -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/radar-langs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-langs-light.svg">
+  <img src="assets/radar-langs-dark.svg" width="400" alt="language radar chart">
+</picture>
+
+</td>
+</tr>
+</table>
 
 </div>
 
-- 📚 **DSA Repository**: **[LeetCode-company-wise-questions](https://github.com/rahulkr-2004/LeetCode-company-wise-questions)** — Java solutions organized by target company.
-
 ---
-
-## `~/` contribution-graph
-
-```console
-$ git log --graph --all --oneline
-```
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=rahulkr-2004&bg_color=0d1117&color=00FF41&line=00FF41&point=ffffff&hide_border=true&area=true&area_color=00FF41" alt="Contribution Graph"/>
+## `~/` contribution calendar
+
+<!-- 3D isometric calendar, regenerated every 6h by .github/workflows/metrics.yml -->
+<img src="assets/metrics.isocalendar.svg" width="90%" alt="3D isometric contribution calendar">
+
+<br><br>
+
+<!-- Snake eats the contribution graph - .github/workflows/snake.yml -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/rahulkr-2004/rahulkr-2004/output/snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rahulkr-2004/rahulkr-2004/output/snake.svg">
+  <img src="https://raw.githubusercontent.com/rahulkr-2004/rahulkr-2004/output/snake.svg" width="100%" alt="snake eating the contribution graph">
+</picture>
 
 </div>
 
 ---
 
-## `~/` security-log
+<div align="center">
 
-```console
-$ tail -n 5 /var/log/quotes.log
-```
+## `~/` the numbers
 
-```
-> "There are two types of companies: those that have been hacked, 
->  and those that don't know they've been hacked." — John Chambers
->
-> "Java is to JavaScript what car is to carpet."
->
-> sudo rm -rf /bugs/
-```
+<!-- Generated by scripts/cards.py into this repo -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/card-stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/card-stats-light.svg">
+  <img src="assets/card-stats-dark.svg" width="480" alt="GitHub statistics">
+</picture>
+
+<br>
+
+<img src="assets/metrics.languages.svg" height="165" alt="most used languages">
+
+<br><br>
+
+<img src="assets/metrics.achievements.svg" width="90%" alt="achievements">
+
+<br><br>
+
+<!-- REALTIME CODOLIO & LEETCODE STATS CARD -->
+<a href="https://codolio.com/profile/C6HHryCX">
+  <img src="https://leetcard.jacoblin.cool/rahulkr_2004?theme=dark&font=JetBrains%20Mono&ext=heatmap" width="90%" alt="LeetCode & Codolio Stats" />
+</a>
+
+</div>
 
 ---
 
 <div align="center">
 
-```console
-$ echo "Access Granted. Safe Travels!"
-Access Granted. Safe Travels!
-```
+## `~/` selected work
 
-<img src="https://komarev.com/ghpvc/?username=rahulkr-2004&label=TERMINAL+ACCESS+COUNT&color=00FF41&style=for-the-badge" alt="Profile Views" />
+<!-- Cards generated by scripts/cards.py from assets/projects.json -->
+<table>
+<tr>
+<td width="50%">
+  <a href="https://github.com/rahulkr-2004/AquaTrack---Water-Management-System">
+    <picture>
+      <source media="(prefers-color-scheme: dark)"  srcset="assets/card-AquaTrack---Water-Management-System-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/card-AquaTrack---Water-Management-System-light.svg">
+      <img src="assets/card-AquaTrack---Water-Management-System-dark.svg" width="420" alt="AquaTrack">
+    </picture>
+  </a>
+</td>
+<td width="50%">
+  <a href="https://github.com/rahulkr-2004/Snipify">
+    <picture>
+      <source media="(prefers-color-scheme: dark)"  srcset="assets/card-Snipify-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/card-Snipify-light.svg">
+      <img src="assets/card-Snipify-dark.svg" width="420" alt="Snipify">
+    </picture>
+  </a>
+</td>
+</tr>
+</table>
 
-*Built with Security & Code Precision*
+<sub>
+
+| project | live | stack |
+|---|---|---|
+| **[AquaTrack](https://github.com/rahulkr-2004/AquaTrack---Water-Management-System)** | [smart-aquatrack.vercel.app](https://smart-aquatrack.vercel.app) | `Java` `Spring Boot` `React` |
+| **[Snipify](https://github.com/rahulkr-2004/Snipify)** | [snipifyurcode.netlify.app](https://snipifyurcode.netlify.app/) | `JavaScript` `HTML` `CSS` |
+
+</sub>
+
+</div>
+
+---
+
+<div align="center">
+
+<sub>`01110100 01101000 01100001 01101110 01101011 01110011 00100000 01100110 01101111 01110010 00100000 01110011 01100011 01110010 01101111 01101100 01101100 01101001 01101110 01100111`</sub>
 
 </div>
