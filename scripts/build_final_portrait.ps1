@@ -1,6 +1,11 @@
 Add-Type -AssemblyName System.Drawing
 
 $inputPath = "c:\Users\rahul\OneDrive\Desktop\github\assets\jacket.png"
+if (-not (Test-Path $inputPath)) {
+    Write-Error "jacket.png not found!"
+    exit 1
+}
+
 $fs = [System.IO.File]::Open($inputPath, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileShare]::Read)
 $origBmp = [System.Drawing.Image]::FromStream($fs)
 
@@ -11,6 +16,8 @@ $pad = 8.0
 $dotScale = 0.92
 $max_r = $cell * 0.5 * $dotScale # 4.60
 $floor = 0.045 # ignore background pitch black
+$revealTime = 2.5
+$revealFade = 0.45
 
 # Bicubic resampling to 100x100
 $small = New-Object System.Drawing.Bitmap($cols, $rows)
@@ -27,15 +34,30 @@ $fs.Dispose()
 $totalW = $cols * $cell + 2 * $pad
 $totalH = $rows * $cell + 2 * $pad
 
+# Build reveal cascade transition animation matching Gargi's profile
+$css = New-Object System.Text.StringBuilder
+$null = $css.Append("<style>")
+$null = $css.Append("@keyframes rv{from{opacity:0}to{opacity:1}}")
+$null = $css.Append(".rw{animation:rv " + $revealFade.ToString("F2", [System.Globalization.CultureInfo]::InvariantCulture) + "s ease-out both}")
+$step = $revealTime / [Math]::Max($rows - 1, 1)
+for ($y = 0; $y -lt $rows; $y++) {
+    $delay = ($y * $step).ToString("F3", [System.Globalization.CultureInfo]::InvariantCulture)
+    $null = $css.Append(".r$y{animation-delay:" + $delay + "s}")
+}
+$null = $css.Append("</style>")
+
 $sb = New-Object System.Text.StringBuilder
 $header = [string]::Format(
     [System.Globalization.CultureInfo]::InvariantCulture,
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {0:F1} {1:F1}" width="{0:F1}" height="{1:F1}" role="img" aria-label="Rahul Kumar, rendered as a dot matrix"><rect width="100%" height="100%" fill="none"/><g transform="translate({2:F1},{2:F1}">',
-    $totalW, $totalH, $pad
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {0:F1} {1:F1}" width="{0:F1}" height="{1:F1}" role="img" aria-label="Rahul Kumar, rendered as a dot matrix">{2}<rect width="100%" height="100%" fill="none"/><g transform="translate({3:F1},{3:F1}">',
+    $totalW, $totalH, $css.ToString(), $pad
 )
 $null = $sb.Append($header)
 
 for ($y = 0; $y -lt $rows; $y++) {
+    $rowSb = New-Object System.Text.StringBuilder
+    $hasDots = $false
+    
     for ($x = 0; $x -lt $cols; $x++) {
         $p = $small.GetPixel($x, $y)
         
@@ -50,7 +72,7 @@ for ($y = 0; $y -lt $rows; $y++) {
         # Power curve for dot sizing
         $v = [Math]::Pow($lum, 0.85)
         $r = $max_r * (0.20 + 0.80 * $v)
-        if ($r -lt 0.4) { continue }
+        if ($r -lt 0.35) { continue }
         
         $cx = $x * $cell + $cell / 2.0
         $cy = $y * $cell + $cell / 2.0
@@ -61,7 +83,12 @@ for ($y = 0; $y -lt $rows; $y++) {
             '<circle cx="{0:F1}" cy="{1:F1}" r="{2:F2}" fill="{3}"/>',
             $cx, $cy, $r, $fill
         )
-        $null = $sb.Append($dot)
+        $null = $rowSb.Append($dot)
+        $hasDots = $true
+    }
+    
+    if ($hasDots) {
+        $null = $sb.Append([string]::Format('<g class="rw r{0}">{1}</g>', $y, $rowSb.ToString()))
     }
 }
 
@@ -70,4 +97,4 @@ $null = $sb.Append("`n  </g>`n</svg>")
 
 $outPath = "c:\Users\rahul\OneDrive\Desktop\github\assets\portrait.svg"
 [System.IO.File]::WriteAllText($outPath, $sb.ToString(), [System.Text.Encoding]::UTF8)
-Write-Host "Success! Created $outPath"
+Write-Host "Success! Created $outPath with row-by-row cascade transition animation!"
