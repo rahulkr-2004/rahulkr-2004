@@ -11,11 +11,7 @@
 
 <!-- NAME / TAGLINE - animated typing -->
 <a href="https://github.com/rahulkr-2004">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Java+Developer;Cyber+Security+Enthusiast;01100011+01101111+01100100+01100101">
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=1A7F37&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Java+Developer;Cyber+Security+Enthusiast;01100011+01101111+01100100+01100101">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=39D353&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Java+Developer;Cyber+Security+Enthusiast;01100011+01101111+01100100+01100101" alt="typing banner">
-  </picture>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=2EA44F&center=true&vCenter=true&width=560&lines=Rahul+Kumar;Java+Developer;Cyber+Security+Enthusiast;01100011+01101111+01100100+01100101" alt="typing banner">
 </a>
 
 <br>
